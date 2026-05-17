@@ -130,32 +130,9 @@
 }
 
 @layer components {
+  /* Core Preview Dimensions */
   .markdown-preview {
-    @apply max-w-none text-[15px] leading-7 text-zinc-300;
-  }
-
-  .markdown-preview h1 {
-    @apply mb-5 border-b border-white/10 pb-5 text-4xl font-semibold leading-tight tracking-tight text-white;
-  }
-
-  .markdown-preview h2 {
-    @apply mt-9 mb-3 flex items-center gap-2 text-2xl font-semibold tracking-tight text-white;
-  }
-
-  .markdown-preview h2::before {
-    @apply block size-1.5 rounded-full bg-cyan-200 content-[''];
-  }
-
-  .markdown-preview h3 {
-    @apply mt-7 mb-2 text-lg font-semibold text-zinc-100;
-  }
-
-  .markdown-preview p {
-    @apply my-3 text-zinc-300;
-  }
-
-  .markdown-preview a {
-    @apply text-cyan-200 underline underline-offset-4;
+    @apply max-w-none text-[15px] leading-7;
   }
 
   .markdown-preview ul,
@@ -171,40 +148,494 @@
     @apply list-decimal;
   }
 
-  .markdown-preview li {
-    @apply pl-1.5 text-zinc-300 marker:text-cyan-200/80;
-  }
-
   .markdown-preview img {
     @apply my-1 mr-1 inline-block rounded-md shadow-lg shadow-black/20;
   }
 
-  .markdown-preview code:not(pre code) {
+  /* ==========================================
+     DARK THEME PREVIEW STYLES (GITHUB DARK)
+     ========================================== */
+  .theme-dark .markdown-preview {
+    @apply text-zinc-300;
+  }
+
+  .theme-dark .markdown-preview h1 {
+    @apply mb-5 border-b border-white/10 pb-5 text-4xl font-semibold leading-tight tracking-tight text-white;
+  }
+
+  .theme-dark .markdown-preview h2 {
+    @apply mt-9 mb-3 flex items-center gap-2 text-2xl font-semibold tracking-tight text-white;
+  }
+
+  .theme-dark .markdown-preview h2::before {
+    @apply block size-1.5 rounded-full bg-cyan-400 content-[''];
+  }
+
+  .theme-dark .markdown-preview h3 {
+    @apply mt-7 mb-2 text-lg font-semibold text-zinc-100;
+  }
+
+  .theme-dark .markdown-preview p {
+    @apply my-3 text-zinc-300;
+  }
+
+  .theme-dark .markdown-preview a {
+    @apply text-cyan-300 underline underline-offset-4 hover:text-cyan-200;
+  }
+
+  .theme-dark .markdown-preview li {
+    @apply pl-1.5 text-zinc-300 marker:text-cyan-400/80;
+  }
+
+  .theme-dark .markdown-preview code:not(pre code) {
     @apply rounded-md border border-cyan-200/10 bg-cyan-200/[0.075] px-1.5 py-0.5 font-mono text-xs text-cyan-100;
   }
 
-  .markdown-preview pre {
+  .theme-dark .markdown-preview pre {
     @apply my-5 overflow-x-auto rounded-2xl border border-white/10 bg-black/70 p-4 shadow-inner shadow-white/[0.03];
   }
 
-  .markdown-preview pre code {
+  .theme-dark .markdown-preview pre code {
     @apply font-mono text-[13px] leading-6 text-zinc-200;
   }
 
-  .markdown-preview blockquote {
+  .theme-dark .markdown-preview blockquote {
     @apply my-5 rounded-r-2xl border-l-2 border-cyan-200/50 bg-cyan-200/[0.04] py-2 pl-4 text-zinc-400;
   }
 
-  .markdown-preview table {
+  .theme-dark .markdown-preview table {
     @apply my-5 w-full overflow-hidden rounded-2xl border border-white/10 text-left text-sm shadow-xl shadow-black/20;
   }
 
-  .markdown-preview th,
-  .markdown-preview td {
+  .theme-dark .markdown-preview th,
+  .theme-dark .markdown-preview td {
     @apply border-b border-white/10 px-4 py-3;
   }
 
-  .markdown-preview th {
+  .theme-dark .markdown-preview th {
     @apply bg-white/[0.055] text-zinc-100;
   }
+
+  /* ==========================================
+     LIGHT THEME PREVIEW STYLES (GITHUB LIGHT)
+     ========================================== */
+  .theme-light .markdown-preview {
+    @apply text-zinc-700;
+  }
+
+  .theme-light .markdown-preview h1 {
+    @apply mb-5 border-b border-zinc-200 pb-5 text-4xl font-semibold leading-tight tracking-tight text-zinc-900;
+  }
+
+  .theme-light .markdown-preview h2 {
+    @apply mt-9 mb-3 flex items-center gap-2 text-2xl font-semibold tracking-tight text-zinc-900;
+  }
+
+  .theme-light .markdown-preview h2::before {
+    @apply block size-1.5 rounded-full bg-cyan-600 content-[''];
+  }
+
+  .theme-light .markdown-preview h3 {
+    @apply mt-7 mb-2 text-lg font-semibold text-zinc-800;
+  }
+
+  .theme-light .markdown-preview p {
+    @apply my-3 text-zinc-700;
+  }
+
+  .theme-light .markdown-preview a {
+    @apply text-cyan-600 underline underline-offset-4 hover:text-cyan-800;
+  }
+
+  .theme-light .markdown-preview li {
+    @apply pl-1.5 text-zinc-700 marker:text-cyan-600;
+  }
+
+  .theme-light .markdown-preview code:not(pre code) {
+    @apply rounded-md border border-cyan-600/10 bg-cyan-600/[0.075] px-1.5 py-0.5 font-mono text-xs text-cyan-700;
+  }
+
+  .theme-light .markdown-preview pre {
+    @apply my-5 overflow-x-auto rounded-2xl border border-zinc-200 bg-zinc-50 p-4 shadow-inner;
+  }
+
+  .theme-light .markdown-preview pre code {
+    @apply font-mono text-[13px] leading-6 text-zinc-800;
+  }
+
+  .theme-light .markdown-preview blockquote {
+    @apply my-5 rounded-r-2xl border-l-2 border-cyan-600/50 bg-cyan-600/[0.04] py-2 pl-4 text-zinc-500;
+  }
+
+  .theme-light .markdown-preview table {
+    @apply my-5 w-full overflow-hidden rounded-2xl border border-zinc-200 text-left text-sm shadow-md;
+  }
+
+  .theme-light .markdown-preview th,
+  .theme-light .markdown-preview td {
+    @apply border-b border-zinc-200 px-4 py-3;
+  }
+
+  .theme-light .markdown-preview th {
+    @apply bg-zinc-100 text-zinc-800;
+  }
 }
+
+/* Elite SaaS Custom Styles */
+@layer utilities {
+  .bg-grid-white {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+
+  .bg-grid-glow {
+    background-size: 80px 80px;
+    background-image: 
+      radial-gradient(circle, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+  }
+
+  .mask-radial {
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  }
+
+  .mask-radial-subtle {
+    mask-image: radial-gradient(circle at center, black 65%, transparent 100%);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(103, 232, 249, 0.2);
+  }
+
+  .glow-border-cyan {
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.15);
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(1) translate(0px, 0px);
+  }
+  33% {
+    opacity: 0.45;
+    transform: scale(1.15) translate(20px, -30px);
+  }
+  66% {
+    opacity: 0.35;
+    transform: scale(0.9) translate(-15px, 20px);
+  }
+}
+
+@keyframes pulse-slow-reverse {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(1) translate(0px, 0px);
+  }
+  33% {
+    opacity: 0.35;
+    transform: scale(0.85) translate(-30px, 20px);
+  }
+  66% {
+    opacity: 0.45;
+    transform: scale(1.1) translate(15px, -15px);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 12s infinite ease-in-out;
+}
+
+.animate-pulse-slow-reverse {
+  animation: pulse-slow-reverse 15s infinite ease-in-out;
+}
+
+/* ==========================================
+   ELITE CINEMATIC FRONTEND UTILITIES
+   ========================================== */
+
+/* Hardware Accelerated Transforms */
+.gpu-layer {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform, opacity;
+}
+
+/* Linear-inspired SVGNumeric Fractal Noise */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+}
+
+/* Vercel/Supabase dynamic spotlight card border */
+.spotlight-card {
+  position: relative;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    var(--spotlight-size, 250px) circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(34, 211, 238, 0.22),
+    rgba(147, 51, 234, 0.08) 50%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+/* VSCode & Cursor simulated editor syntax theme */
+.syntax-keyword { color: #f472b6; font-weight: 500; } /* Tailwind Pink-400 */
+.syntax-string { color: #34d399; }  /* Tailwind Emerald-400 */
+.syntax-function { color: #60a5fa; } /* Tailwind Blue-400 */
+.syntax-variable { color: #fbbf24; } /* Tailwind Amber-400 */
+.syntax-comment { color: #71717a; font-style: italic; } /* Tailwind Zinc-500 */
+.syntax-tag { color: #22d3ee; } /* Tailwind Cyan-400 */
+.syntax-punctuation { color: #a1a1aa; }
+
+/* Blinking IDE editor cursor */
+.markdown-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.15em;
+  background-color: #22d3ee;
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: cursor-blink 1s step-end infinite;
+  box-shadow: 0 0 8px #22d3ee;
+}
+
+@keyframes cursor-blink {
+  from, to { background-color: transparent }
+  50% { background-color: #22d3ee }
+}
+
+/* Sweep shine effect for technology badges */
+.badge-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.badge-shine::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 45%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 55%
+  );
+  transform: rotate(45deg);
+  transition: transform 0.5s ease;
+}
+
+.badge-shine:hover::after {
+  transform: translate(50%, 50%) rotate(45deg);
+}
+
+/* Infinite horizontal marquee loop */
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* ==========================================
+   README PRESENTATION THEMES STYLE ENGINE
+   ========================================== */
+
+/* 1. SaaS Gradient Theme */
+.theme-readme-saas-gradient.markdown-preview,
+.theme-readme-saas-gradient .markdown-preview {
+  background: linear-gradient(145deg, #050508 0%, #150525 100%) !important;
+  color: #e2e8f0 !important;
+  font-family: 'Outfit', -apple-system, sans-serif !important;
+  padding: 2.5rem !important;
+  border-radius: 1rem !important;
+}
+.theme-readme-saas-gradient .markdown-preview h1 {
+  background: linear-gradient(to right, #a855f7, #ec4899) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.25) !important;
+  padding-bottom: 1.5rem !important;
+}
+.theme-readme-saas-gradient .markdown-preview h2 {
+  color: #ec4899 !important;
+}
+.theme-readme-saas-gradient .markdown-preview h2::before {
+  background: #e11d48 !important;
+  box-shadow: 0 0 12px rgba(225, 29, 72, 0.8) !important;
+}
+.theme-readme-saas-gradient .markdown-preview pre {
+  background: rgba(10, 5, 20, 0.75) !important;
+  border: 1px solid rgba(168, 85, 247, 0.2) !important;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.15) !important;
+}
+.theme-readme-saas-gradient .markdown-preview code:not(pre code) {
+  background: rgba(236, 72, 153, 0.1) !important;
+  border: 1px solid rgba(236, 72, 153, 0.2) !important;
+  color: #f472b6 !important;
+}
+
+/* 2. Hacker Terminal Theme */
+.theme-readme-hacker.markdown-preview,
+.theme-readme-hacker .markdown-preview {
+  background: #000000 !important;
+  color: #38bdf8 !important;
+  font-family: 'Courier New', Courier, monospace !important;
+  padding: 2.5rem !important;
+  border-radius: 1rem !important;
+}
+.theme-readme-hacker .markdown-preview h1, 
+.theme-readme-hacker .markdown-preview h2, 
+.theme-readme-hacker .markdown-preview h3 {
+  color: #22c55e !important;
+  font-family: 'Courier New', Courier, monospace !important;
+  text-shadow: 0 0 6px rgba(34, 197, 94, 0.6) !important;
+}
+.theme-readme-hacker .markdown-preview h1 {
+  border-bottom: 1px dashed #22c55e !important;
+  padding-bottom: 1rem !important;
+}
+.theme-readme-hacker .markdown-preview h2::before {
+  background: #22c55e !important;
+  box-shadow: 0 0 10px #22c55e !important;
+}
+.theme-readme-hacker .markdown-preview pre {
+  background: #050505 !important;
+  border: 1px dashed #22c55e !important;
+}
+.theme-readme-hacker .markdown-preview pre code {
+  color: #22c55e !important;
+}
+.theme-readme-hacker .markdown-preview code:not(pre code) {
+  background: rgba(34, 197, 94, 0.1) !important;
+  border: 1px solid rgba(34, 197, 94, 0.3) !important;
+  color: #22c55e !important;
+}
+
+/* 3. Open Source Minimal Theme */
+.theme-readme-minimal.markdown-preview,
+.theme-readme-minimal .markdown-preview {
+  background: #ffffff !important;
+  color: #292524 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  padding: 2rem !important;
+}
+.theme-readme-minimal .markdown-preview h1, 
+.theme-readme-minimal .markdown-preview h2, 
+.theme-readme-minimal .markdown-preview h3 {
+  color: #1c1917 !important;
+  border: none !important;
+  padding: 0 !important;
+}
+.theme-readme-minimal .markdown-preview h2::before {
+  display: none !important;
+}
+.theme-readme-minimal .markdown-preview pre {
+  background: #f5f5f4 !important;
+  border: 1px solid #e7e5e4 !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+.theme-readme-minimal .markdown-preview pre code {
+  color: #292524 !important;
+}
+.theme-readme-minimal .markdown-preview code:not(pre code) {
+  background: #f5f5f4 !important;
+  border: 1px solid #e7e5e4 !important;
+  color: #e11d48 !important;
+}
+
+/* 4. Documentation Pro Theme */
+.theme-readme-doc-pro.markdown-preview,
+.theme-readme-doc-pro .markdown-preview {
+  background: #f8fafc !important;
+  color: #334155 !important;
+  font-family: 'Georgia', Cambria, serif !important;
+  padding: 3rem !important;
+}
+.theme-readme-doc-pro .markdown-preview h1, 
+.theme-readme-doc-pro .markdown-preview h2, 
+.theme-readme-doc-pro .markdown-preview h3 {
+  color: #0f172a !important;
+  font-family: 'Outfit', -apple-system, sans-serif !important;
+}
+.theme-readme-doc-pro .markdown-preview h1 {
+  border-bottom: 2px solid #0f172a !important;
+  padding-bottom: 1.5rem !important;
+}
+.theme-readme-doc-pro .markdown-preview h2::before {
+  background: #0f172a !important;
+}
+.theme-readme-doc-pro .markdown-preview pre {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
+}
+.theme-readme-doc-pro .markdown-preview pre code {
+  color: #334155 !important;
+}
+.theme-readme-doc-pro .markdown-preview code:not(pre code) {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+

@@ -1,0 +1,16 @@
+{
+  "name": "ReadmeForge Platform",
+  "short_name": "ReadmeForge",
+  "description": "Premium developer documentation and README generation platform.",
+  "start_url": "/generator",
+  "display": "standalone",
+  "background_color": "#030303",
+  "theme_color": "#030303",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}
